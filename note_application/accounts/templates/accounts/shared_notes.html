@@ -17,7 +17,7 @@
   <div class="jumbotron" style="text-align: center;">
 
 
-
+<h3 >Hey {{ user.first_name }} check out for your notes.</h3>
 
                       <a style="margin: 5px 5px 6px;" href="/accounts/notes" class="btn btn-price btn-success btn-lg">Your Notes</a>
 
@@ -181,6 +181,7 @@
                         </div>
                         <div class="controle-panel-heading panel-heading panel-heading-landing-box">
                             Note no : {{data.id}}
+                          <div>Shared by : {{data.user}}</div>
                         </div>
                         <div class="panel-body panel-body-landing">
                             <table class="table">

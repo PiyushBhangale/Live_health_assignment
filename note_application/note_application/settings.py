@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_messages',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -112,3 +113,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL='/accounts/profile'
+#
+# AUTHENTICATION_BACKENDS = (
+#         'django.contrib.auth.backends.RemoteUserBackend',
+#         'django.contrib.auth.backends.ModelBackend',
+# )

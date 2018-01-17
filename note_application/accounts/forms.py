@@ -53,6 +53,7 @@ class NoteForm(forms.ModelForm):
             'title',
             'note',
             'shared',
+            'completed',
         )
 
     def save(self,commit=True):

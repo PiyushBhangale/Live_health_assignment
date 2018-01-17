@@ -5,12 +5,13 @@ from django.db.models.signals import post_save
 
 # Create your models here.
 from django.dispatch import receiver
+from django.core.urlresolvers import reverse
 
 
-class UserProf(models.Model):
-    user=models.OneToOneField(User)
-    title=models.TextField(max_length=100,default=None )
-    note=models.TextField(max_length=1000,default=None)
+# class UserProf(models.Model):
+#     user=models.OneToOneField(User)
+#     title=models.TextField(max_length=100,default=None )
+#     note=models.TextField(max_length=1000,default=None)
 
 class Noteclass(models.Model):
     user = models.ForeignKey(User)
@@ -18,6 +19,9 @@ class Noteclass(models.Model):
     shared=models.BooleanField(default=False)
     title=models.TextField(max_length=100,default=None )
     note=models.TextField(max_length=1000,default=None)
+
+    def get_absolute_url(self):
+        return reverse('accounts:note_edit', kwargs={'pk': self.pk})
 
 # class Sharednotes(models.Model):
 #     shared_to=models.ForeignKey(User,related_name='shared_to')
